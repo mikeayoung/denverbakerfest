@@ -53,7 +53,7 @@
       overflow: hidden;
     }
 
-    .hero-circles {
+    .hero-shapes {
       position: absolute;
       top: 0;
       left: 0;
@@ -63,17 +63,28 @@
       z-index: 0;
     }
 
-    .hero-circles .circle {
+    .hero-shapes .shape {
       position: absolute;
+    }
+
+    /* Circles */
+    .hero-shapes .circle {
       border-radius: 50%;
     }
 
-    .hero-circles .c1 { width: 180px; height: 180px; background: var(--green); top: -40px; left: -30px; animation: drift1 4s ease-in-out infinite; }
-    .hero-circles .c2 { width: 120px; height: 120px; background: var(--coral); top: 10px; right: 40px; opacity: 0.7; animation: drift2 5s ease-in-out infinite; }
-    .hero-circles .c3 { width: 200px; height: 200px; background: var(--green); top: -60px; right: -60px; animation: drift3 6s ease-in-out infinite; }
-    .hero-circles .c4 { width: 90px; height: 90px; background: var(--coral); top: 80px; right: 10px; opacity: 0.6; animation: drift4 4.5s ease-in-out infinite; }
-    .hero-circles .c5 { width: 140px; height: 140px; background: var(--green-light); bottom: -40px; left: 20%; opacity: 0.5; animation: drift5 5.5s ease-in-out infinite; }
-    .hero-circles .c6 { width: 100px; height: 100px; background: var(--coral); top: 30px; left: 30%; opacity: 0.5; animation: drift6 3.5s ease-in-out infinite; }
+    /* Leaf/petal shapes — like the PDF's pointed ovals */
+    .hero-shapes .leaf {
+      border-radius: 50% 0 50% 0;
+    }
+
+    /* Circles */
+    .hero-shapes .c1 { width: 180px; height: 180px; background: var(--green); top: -40px; left: -30px; animation: drift1 4s ease-in-out infinite; }
+    .hero-shapes .c2 { width: 120px; height: 120px; background: var(--coral); top: 10px; right: 40px; opacity: 0.7; animation: drift2 5s ease-in-out infinite; }
+    .hero-shapes .c3 { width: 200px; height: 200px; background: var(--green); top: -60px; right: -60px; animation: drift3 6s ease-in-out infinite; }
+    .hero-shapes .c4 { width: 90px; height: 90px; background: var(--coral); top: 80px; right: 10px; opacity: 0.6; animation: drift4 4.5s ease-in-out infinite; }
+    .hero-shapes .c5 { width: 140px; height: 140px; background: var(--green-light); bottom: -40px; left: 20%; opacity: 0.5; animation: drift5 5.5s ease-in-out infinite; }
+    .hero-shapes .c6 { width: 100px; height: 100px; background: var(--coral); top: 30px; left: 30%; opacity: 0.5; animation: drift6 3.5s ease-in-out infinite; }
+
 
     @keyframes drift1 {
       0%, 100% { transform: translate(0, 0); }
@@ -218,57 +229,13 @@
       color: var(--text-dark);
     }
 
-    .fb-food-full {
-      display: none;
-    }
-
-    /* ---- DETAILS SECTION ---- */
-    .details {
-      background: var(--cream);
-      padding: 3rem 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .details h2 {
-      font-family: 'Baumans', sans-serif;
-      font-size: 2rem;
-      color: var(--blue-dark);
-      text-align: center;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .detail-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .detail-card .icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .detail-card h3 {
-      font-family: 'Baumans', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
+    .fb-free {
+      background: var(--pink-light);
       color: var(--text-dark);
     }
 
-    .detail-card p {
-      font-size: 1.2rem;
-      color: #666;
-      line-height: 1.5;
+    .fb-food-full {
+      display: none;
     }
 
     /* ---- CHALK MURAL CTA ---- */
@@ -324,6 +291,17 @@
     .btn-coral {
       background: var(--coral);
       color: white;
+    }
+
+    .hero .btn {
+      border: 2px solid var(--cream);
+      box-shadow: 0 0 10px rgba(245, 237, 227, 0.3), 0 0 20px rgba(232, 98, 79, 0.2);
+      animation: glow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(245, 237, 227, 0.3), 0 0 20px rgba(232, 98, 79, 0.2); }
+      50% { box-shadow: 0 0 16px rgba(245, 237, 227, 0.5), 0 0 32px rgba(232, 98, 79, 0.3); }
     }
 
     .btn-green {
@@ -402,6 +380,37 @@
       padding: 0.85rem 3rem;
     }
 
+    /* ---- TRIANGLE DIVIDER (matches PDF bottom section) ---- */
+    .triangle-divider {
+      background: var(--cream);
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      overflow: hidden;
+    }
+
+    .tri {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid var(--pink-light);
+      opacity: 0.6;
+    }
+
+    .tri:nth-child(odd) {
+      border-bottom-color: var(--pink);
+      opacity: 0.35;
+      transform: scale(1.2);
+    }
+
+    .tri:nth-child(3) {
+      border-bottom-color: var(--pink);
+      opacity: 0.5;
+      transform: scale(1.4) translateY(-5px);
+    }
+
     /* ---- FOOTER ---- */
     .footer {
       background: var(--pink);
@@ -458,9 +467,6 @@
         line-height: 1.1;
       }
 
-      .details-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -468,19 +474,21 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-circles">
-      <div class="circle c1"></div>
-      <div class="circle c2"></div>
-      <div class="circle c3"></div>
-      <div class="circle c4"></div>
-      <div class="circle c5"></div>
-      <div class="circle c6"></div>
+    <div class="hero-shapes">
+      <div class="shape circle c1"></div>
+      <div class="shape circle c2"></div>
+      <div class="shape circle c3"></div>
+      <div class="shape circle c4"></div>
+      <div class="shape circle c5"></div>
+      <div class="shape circle c6"></div>
     </div>
     <div class="hero-content">
       <p class="hero-presented">Baker Historic Neighborhood Association Presents</p>
       <h1 class="hero-title">Baker Fest</h1>
       <p class="hero-subtitle">@ Dailey Park</p>
       <div class="hero-date-banner">May 30 &bull; 11am&ndash;3pm</div>
+      <br>
+      <a href="#contact" class="btn btn-coral" style="margin-top:1rem;">Sign Up for a Chalk Square</a>
     </div>
   </header>
 
@@ -507,42 +515,19 @@
     <div class="feature-block fb-food">
       <h2>Local Food Vendors</h2>
     </div>
+    <div class="feature-block fb-free">
+      <h2>All Free</h2>
+      <p>Bring your kids, dogs, and friends (even if they don't live in Baker!)</p>
+    </div>
   </section>
   <div class="fb-food-full">
     <h2>Local Food Vendors</h2>
   </div>
 
-  <!-- EVENT DETAILS -->
-  <section class="details">
-    <h2>Event Details</h2>
-    <div class="details-grid">
-      <div class="detail-card">
-        <div class="icon">&#128197;</div>
-        <h3>When</h3>
-        <p>Saturday, May 30, 2026<br>11:00 AM &ndash; 3:00 PM</p>
-      </div>
-      <div class="detail-card">
-        <div class="icon">&#128205;</div>
-        <h3>Where</h3>
-        <p>Dailey Park<br>Baker Historic Neighborhood<br>Denver, CO</p>
-      </div>
-      <div class="detail-card">
-        <div class="icon">&#127912;</div>
-        <h3>Chalk Mural</h3>
-        <p>Add color to the community mural or sign up for your own square to create a unique piece!</p>
-      </div>
-      <div class="detail-card">
-        <div class="icon">&#127925;</div>
-        <h3>Free Admission</h3>
-        <p>Live music, chalk art, ice cream, and good vibes. All free and open to everyone (even your friends who don't live in Baker!)</p>
-      </div>
-    </div>
-  </section>
-
   <!-- CHALK MURAL CTA -->
   <section class="chalk-cta">
     <h2>Want to Design Your Own Mural Square?</h2>
-    <p>Sign up for a square and create your own mini masterpiece at the event! Chalk and supplies provided.</p>
+    <p>Sign up for a square and create your own mini masterpiece at the event! Chalk provided.</p>
     <a href="#contact" class="btn btn-pink">Sign Up Below</a>
   </section>
 
@@ -588,6 +573,17 @@
       </form>
     </div>
   </section>
+
+  <!-- TRIANGLE DIVIDER -->
+  <div class="triangle-divider">
+    <div class="tri"></div>
+    <div class="tri"></div>
+    <div class="tri"></div>
+    <div class="tri"></div>
+    <div class="tri"></div>
+    <div class="tri"></div>
+    <div class="tri"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
