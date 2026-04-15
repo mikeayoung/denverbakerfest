@@ -68,12 +68,12 @@
       border-radius: 50%;
     }
 
-    .hero-circles .c1 { width: 180px; height: 180px; background: var(--green); top: -40px; left: -30px; animation: drift1 8s ease-in-out infinite; }
-    .hero-circles .c2 { width: 120px; height: 120px; background: var(--coral); top: 10px; right: 40px; opacity: 0.7; animation: drift2 10s ease-in-out infinite; }
-    .hero-circles .c3 { width: 200px; height: 200px; background: var(--green); top: -60px; right: -60px; animation: drift3 12s ease-in-out infinite; }
-    .hero-circles .c4 { width: 90px; height: 90px; background: var(--coral); top: 80px; right: 10px; opacity: 0.6; animation: drift4 9s ease-in-out infinite; }
-    .hero-circles .c5 { width: 140px; height: 140px; background: var(--green-light); bottom: -40px; left: 20%; opacity: 0.5; animation: drift5 11s ease-in-out infinite; }
-    .hero-circles .c6 { width: 100px; height: 100px; background: var(--coral); top: 30px; left: 30%; opacity: 0.5; animation: drift6 7s ease-in-out infinite; }
+    .hero-circles .c1 { width: 180px; height: 180px; background: var(--green); top: -40px; left: -30px; animation: drift1 4s ease-in-out infinite; }
+    .hero-circles .c2 { width: 120px; height: 120px; background: var(--coral); top: 10px; right: 40px; opacity: 0.7; animation: drift2 5s ease-in-out infinite; }
+    .hero-circles .c3 { width: 200px; height: 200px; background: var(--green); top: -60px; right: -60px; animation: drift3 6s ease-in-out infinite; }
+    .hero-circles .c4 { width: 90px; height: 90px; background: var(--coral); top: 80px; right: 10px; opacity: 0.6; animation: drift4 4.5s ease-in-out infinite; }
+    .hero-circles .c5 { width: 140px; height: 140px; background: var(--green-light); bottom: -40px; left: 20%; opacity: 0.5; animation: drift5 5.5s ease-in-out infinite; }
+    .hero-circles .c6 { width: 100px; height: 100px; background: var(--coral); top: 30px; left: 30%; opacity: 0.5; animation: drift6 3.5s ease-in-out infinite; }
 
     @keyframes drift1 {
       0%, 100% { transform: translate(0, 0); }
@@ -180,23 +180,23 @@
     }
 
     .fb-music {
-      background: var(--pink-light);
-      color: var(--text-dark);
+      background: var(--blue);
+      color: var(--white);
     }
 
     .fb-music a {
-      color: var(--blue-dark);
+      color: var(--cream);
       text-decoration: none;
       border-bottom: 2px solid transparent;
       transition: border-color 0.2s;
     }
 
     .fb-music a:hover {
-      border-bottom-color: var(--blue-dark);
+      border-bottom-color: var(--cream);
     }
 
     .fb-mural {
-      background: var(--blue);
+      background: var(--coral);
       color: var(--white);
       grid-row: span 2;
       display: flex;
@@ -209,13 +209,13 @@
     }
 
     .fb-icecream {
-      background: var(--cream-dark);
-      color: var(--coral);
+      background: var(--green);
+      color: var(--white);
     }
 
     .fb-food {
-      background: var(--green);
-      color: var(--white);
+      background: var(--cream-dark);
+      color: var(--text-dark);
     }
 
     .fb-food-full {
@@ -444,8 +444,8 @@
 
       .fb-food-full {
         display: block;
-        background: var(--green);
-        color: var(--white);
+        background: var(--cream-dark);
+        color: var(--text-dark);
         padding: 2.5rem 1.5rem;
         text-align: center;
       }
@@ -499,7 +499,7 @@
     </div>
     <div class="feature-block fb-icecream">
       <h2>Ice Cream Social</h2>
-      <p>Free scoops from <b>Sweet Action</b></p>
+      <p>Free scoops from</p>
       <a href="https://sweetaction.com" target="_blank" rel="noopener">
         <img src="https://sweetaction.com/wp-content/uploads/2021/09/nav-logo.png" alt="Sweet Action Ice Cream" style="max-width:180px; margin-top:0.75rem;">
       </a>
@@ -571,12 +571,10 @@
         <div class="form-group">
           <label for="subject">I'm Interested In...</label>
           <select id="subject" name="subject">
-            <option value="general">General Question</option>
             <option value="chalk">Signing Up for a Chalk Square</option>
             <option value="volunteer">Volunteering</option>
             <option value="vendor">Food Vending</option>
-            <option value="music">Music / Performing</option>
-            <option value="sponsor">Sponsorship</option>
+            <option value="sponsor">Sponsoring</option>
             <option value="other">Other</option>
           </select>
         </div>
