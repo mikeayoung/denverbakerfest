@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baker Fest @ Dailey Park — May 30, 2026</title>
+  <meta name="description" content="Baker Fest at Dailey Park — community chalk mural, live music, ice cream social, and local food vendors. May 30, 2026, 11am–3pm. Presented by Baker Historic Neighborhood Association.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Baumans: Bauhaus-inspired display font (Google Fonts, OFL) -->
+  <!-- Rye: Blucifer's First Rodeo brand font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baumans&family=Rye&display=swap" rel="stylesheet">
+  <!-- Glacial Indifference: body text (OFL) -->
+  <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+  <!-- Nickainley: script/accent text (free) -->
+  <link href="https://fonts.cdnfonts.com/css/nickainley" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #E85B9B;
+      --pink-light: #F2A6C6;
+      --green: #3BBF8F;
+      --green-light: #7DDBB5;
+      --blue: #4A7CF5;
+      --blue-dark: #3A5FD9;
+      --coral: #E8624F;
+      --cream: #F5EDE3;
+      --cream-dark: #EDE0D0;
+      --white: #FFFFFF;
+      --text-dark: #2D2D2D;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Glacial Indifference', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: var(--pink);
+      position: relative;
+      padding: 2rem 1rem 3rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-circles .circle {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .hero-circles .c1 { width: 180px; height: 180px; background: var(--green); top: -40px; left: -30px; animation: drift1 8s ease-in-out infinite; }
+    .hero-circles .c2 { width: 120px; height: 120px; background: var(--coral); top: 10px; right: 40px; opacity: 0.7; animation: drift2 10s ease-in-out infinite; }
+    .hero-circles .c3 { width: 200px; height: 200px; background: var(--green); top: -60px; right: -60px; animation: drift3 12s ease-in-out infinite; }
+    .hero-circles .c4 { width: 90px; height: 90px; background: var(--coral); top: 80px; right: 10px; opacity: 0.6; animation: drift4 9s ease-in-out infinite; }
+    .hero-circles .c5 { width: 140px; height: 140px; background: var(--green-light); bottom: -40px; left: 20%; opacity: 0.5; animation: drift5 11s ease-in-out infinite; }
+    .hero-circles .c6 { width: 100px; height: 100px; background: var(--coral); top: 30px; left: 30%; opacity: 0.5; animation: drift6 7s ease-in-out infinite; }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(15px, 10px); }
+    }
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-12px, 8px); }
+    }
+    @keyframes drift3 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-10px, 15px); }
+    }
+    @keyframes drift4 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-8px, -12px); }
+    }
+    @keyframes drift5 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(12px, -8px); }
+    }
+    @keyframes drift6 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10px, 6px) scale(1.05); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-presented {
+      font-family: 'Glacial Indifference', sans-serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .script-text {
+      font-family: 'Nickainley', cursive;
+    }
+
+    .hero-title {
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+    }
+
+    .hero-subtitle {
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--cream);
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+    }
+
+    .hero-date-banner {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--blue);
+      color: white;
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      padding: 0.5rem 2rem;
+      border-radius: 8px;
+      text-transform: uppercase;
+    }
+
+    /* ---- FEATURES GRID ---- */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .feature-block {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .feature-block h2 {
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-block p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .fb-music {
+      background: var(--pink-light);
+      color: var(--text-dark);
+    }
+
+    .fb-music a {
+      color: var(--blue-dark);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .fb-music a:hover {
+      border-bottom-color: var(--blue-dark);
+    }
+
+    .fb-mural {
+      background: var(--blue);
+      color: var(--white);
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fb-mural p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .fb-icecream {
+      background: var(--cream-dark);
+      color: var(--coral);
+    }
+
+    .fb-food {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .fb-food-full {
+      display: none;
+    }
+
+    /* ---- DETAILS SECTION ---- */
+    .details {
+      background: var(--cream);
+      padding: 3rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .details h2 {
+      font-family: 'Baumans', sans-serif;
+      font-size: 2rem;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .detail-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .detail-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-card h3 {
+      font-family: 'Baumans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+    }
+
+    .detail-card p {
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ---- CHALK MURAL CTA ---- */
+    .chalk-cta {
+      background: var(--green);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: white;
+    }
+
+    .chalk-cta h2 {
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .chalk-cta p {
+      font-size: 1.3rem;
+      max-width: 550px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Baumans', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-coral {
+      background: var(--coral);
+      color: white;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    /* ---- CONTACT FORM ---- */
+    .contact {
+      background: var(--blue);
+      padding: 3rem 1.5rem;
+      color: white;
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact h2 {
+      font-family: 'Baumans', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact .subtitle {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      font-size: 1.15rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Glacial Indifference', sans-serif;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-dark);
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #999;
+    }
+
+    .form-submit {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .form-submit .btn {
+      font-size: 1.2rem;
+      padding: 0.85rem 3rem;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--pink);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .footer-title {
+      font-family: 'Baumans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer p {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer a {
+      color: var(--cream);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 640px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .fb-mural {
+        grid-row: auto;
+      }
+
+      .fb-food {
+        display: none;
+      }
+
+      .fb-food-full {
+        display: block;
+        background: var(--green);
+        color: var(--white);
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+      }
+
+      .fb-food-full h2 {
+        font-family: 'Baumans', sans-serif;
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-circles">
+      <div class="circle c1"></div>
+      <div class="circle c2"></div>
+      <div class="circle c3"></div>
+      <div class="circle c4"></div>
+      <div class="circle c5"></div>
+      <div class="circle c6"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-presented">Baker Historic Neighborhood Association Presents</p>
+      <h1 class="hero-title">Baker Fest</h1>
+      <p class="hero-subtitle">@ Dailey Park</p>
+      <div class="hero-date-banner">May 30 &bull; 11am&ndash;3pm</div>
+    </div>
+  </header>
+
+  <!-- FEATURE BLOCKS -->
+  <section class="features">
+    <div class="feature-block fb-music">
+      <h2>Live Music</h2>
+      <p>Featuring artists from<br><span style="font-family:'Rye',serif; font-size:1.2em;"><a href="https://bluciferfest.com">Blucifer's First Rodeo</a></span></p>
+    </div>
+    <div class="feature-block fb-mural">
+      <h2>Community Chalk Mural</h2>
+      <p>Join us in bringing vibrant, community-created works of art to the park.</p>
+      <p style="margin-top:1.25rem; font-weight:700; text-transform:uppercase;">Add color to a community mural designed by a featured artist</p>
+      <p style="margin-top:0.75rem; font-weight:700; text-transform:uppercase;">or</p>
+      <p style="margin-top:0.75rem; font-weight:700; text-transform:uppercase;">Sign up for your own square to create a unique piece</p>
+    </div>
+    <div class="feature-block fb-icecream">
+      <h2>Ice Cream Social</h2>
+      <p>Cool off with <b>free</b> scoops</p>
+    </div>
+    <div class="feature-block fb-food">
+      <h2>Local Food Vendors</h2>
+    </div>
+  </section>
+  <div class="fb-food-full">
+    <h2>Local Food Vendors</h2>
+  </div>
+
+  <!-- EVENT DETAILS -->
+  <section class="details">
+    <h2>Event Details</h2>
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="icon">&#128197;</div>
+        <h3>When</h3>
+        <p>Saturday, May 30, 2026<br>11:00 AM &ndash; 3:00 PM</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">&#128205;</div>
+        <h3>Where</h3>
+        <p>Dailey Park<br>Baker Historic Neighborhood<br>Denver, CO</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">&#127912;</div>
+        <h3>Chalk Mural</h3>
+        <p>Add color to the community mural or sign up for your own square to create a unique piece!</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">&#127925;</div>
+        <h3>Free Admission</h3>
+        <p>Live music, chalk art, ice cream, and good vibes. All free and open to everyone (even your friends who don't live in Baker!)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALK MURAL CTA -->
+  <section class="chalk-cta">
+    <h2>Want to Design Your Own Mural Square?</h2>
+    <p>Sign up for a square and create your own mini masterpiece at the event! Chalk and supplies provided.</p>
+    <a href="#contact" class="btn btn-pink">Sign Up Below</a>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Get In Touch</h2>
+      <p class="subtitle">Questions? Want to volunteer, vend, or sign up for a chalk square? Drop us a line!</p>
+
+      <!--
+        WordPress users: Replace this <form> with a Contact Form 7 or WPForms shortcode, e.g.:
+        [contact-form-7 id="123" title="Baker Fest Contact"]
+
+        For static hosting, you can use Formspree or Netlify Forms.
+        Example Formspree: change action to "https://formspree.io/f/YOUR_ID"
+      -->
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">I'm Interested In...</label>
+          <select id="subject" name="subject">
+            <option value="general">General Question</option>
+            <option value="chalk">Signing Up for a Chalk Square</option>
+            <option value="volunteer">Volunteering</option>
+            <option value="vendor">Food Vending</option>
+            <option value="music">Music / Performing</option>
+            <option value="sponsor">Sponsorship</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us more..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-coral">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-title">Baker Fest @ Dailey Park</p>
+    <p>Presented by Baker Historic Neighborhood Association</p>
+    <p>May 30, 2026 &bull; 11am&ndash;3pm &bull; Denver, CO</p>
+  </footer>
+
+</body>
+</html>
