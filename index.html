@@ -441,6 +441,22 @@
       padding: 0.85rem 3rem;
     }
 
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     /* ---- TRIANGLE DIVIDER (matches PDF bottom section) ---- */
     .triangle-divider {
       background: var(--cream);
@@ -664,8 +680,10 @@
               return;
             }
 
-            btn.textContent = 'Sending...';
+            btn.innerHTML = '<span class="spinner"></span> Sending...';
             btn.disabled = true;
+            form.style.opacity = '0.6';
+            form.style.pointerEvents = 'none';
 
             var data = new FormData(form);
             fetch('https://script.google.com/macros/s/AKfycbwiE8zreyvjgF6Y5yd-cyEPN-vbkzkicIQmBSG-qK6SWP_otp9jlJlgFPu0c5DrLFxmEg/exec', {
@@ -678,8 +696,10 @@
               document.getElementById('form-success').style.display = 'block';
             })
             .catch(function() {
-              btn.textContent = 'Send Message';
+              btn.innerHTML = 'Send Message';
               btn.disabled = false;
+              form.style.opacity = '1';
+              form.style.pointerEvents = 'auto';
               alert('Something went wrong. Please try again!');
             });
           });
