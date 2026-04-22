@@ -538,6 +538,11 @@
       <p class="subtitle">Questions? Want to volunteer, vend, or sign up for a chalk square? Drop us a line!</p>
 
       <form id="contact-form">
+        <!-- Honeypot field — hidden from humans, bots fill it out -->
+        <div style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -570,28 +575,47 @@
       </div>
 
       <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-          e.preventDefault();
-          var form = this;
-          var btn = form.querySelector('button[type="submit"]');
-          btn.textContent = 'Sending...';
-          btn.disabled = true;
+        (function() {
+          var loadTime = Date.now();
+          var submitted = false;
 
-          var data = new FormData(form);
-          fetch('https://script.google.com/macros/s/AKfycbxjskb323Gwrhjo8ZEGaAx7KnynSOHpYi6pNid4-eXU-JJtaq8PsZrBqtTen_crf6cNcw/exec', {
-            method: 'POST',
-            body: data
-          })
-          .then(function() {
-            form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-          })
-          .catch(function() {
-            btn.textContent = 'Send Message';
-            btn.disabled = false;
-            alert('Something went wrong. Please try again!');
+          document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = form.querySelector('button[type="submit"]');
+
+            // Honeypot check — bots fill hidden fields
+            if (form.querySelector('#website').value) return;
+
+            // Time check — reject if submitted in under 2 seconds (bot speed)
+            if (Date.now() - loadTime < 2000) return;
+
+            // Rate limit — one submission per session
+            if (submitted) {
+              alert('You already submitted the form. Thanks!');
+              return;
+            }
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            var data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycbxjskb323Gwrhjo8ZEGaAx7KnynSOHpYi6pNid4-eXU-JJtaq8PsZrBqtTen_crf6cNcw/exec', {
+              method: 'POST',
+              body: data
+            })
+            .then(function() {
+              submitted = true;
+              form.style.display = 'none';
+              document.getElementById('form-success').style.display = 'block';
+            })
+            .catch(function() {
+              btn.textContent = 'Send Message';
+              btn.disabled = false;
+              alert('Something went wrong. Please try again!');
+            });
           });
-        });
+        })();
       </script>
     </div>
   </section>
