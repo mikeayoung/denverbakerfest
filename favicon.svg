@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#E85B9B"/>
+  <circle cx="12" cy="10" r="14" fill="#3BBF8F" opacity="0.5"/>
+  <circle cx="54" cy="8" r="10" fill="#E8624F" opacity="0.5"/>
+  <text x="32" y="48" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="36" fill="#F5EDE3">BF</text>
+</svg>
