@@ -227,9 +227,22 @@
       color: var(--white);
     }
 
-    .fb-free {
+    .free-banner {
       background: var(--pink-light);
       color: var(--text-dark);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .free-banner h2 {
+      font-family: 'Baumans', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .free-banner p {
+      font-size: 1.4rem;
     }
 
     /* ---- VENDORS ---- */
@@ -547,10 +560,12 @@
         <img src="https://sweetaction.com/wp-content/uploads/2021/09/nav-logo.png" alt="Sweet Action Ice Cream" style="max-width:180px; margin-top:0.75rem;">
       </a>
     </div>
-    <div class="feature-block fb-free">
-      <h2>All Free</h2>
-      <p>Bring your kids, dogs, and friends (even if they don't live in Baker!)</p>
-    </div>
+  </section>
+
+  <!-- ALL FREE BANNER -->
+  <section class="free-banner">
+    <h2>All Free</h2>
+    <p>Bring your kids, dogs, and friends (even if they don't live in Baker!)</p>
   </section>
 
   <!-- FOOD VENDORS -->
