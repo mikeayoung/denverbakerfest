@@ -537,14 +537,7 @@
       <h2>Get In Touch</h2>
       <p class="subtitle">Questions? Want to volunteer, vend, or sign up for a chalk square? Drop us a line!</p>
 
-      <!--
-        WordPress users: Replace this <form> with a Contact Form 7 or WPForms shortcode, e.g.:
-        [contact-form-7 id="123" title="Baker Fest Contact"]
-
-        For static hosting, you can use Formspree or Netlify Forms.
-        Example Formspree: change action to "https://formspree.io/f/YOUR_ID"
-      -->
-      <form action="#" method="POST">
+      <form id="contact-form">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -556,11 +549,11 @@
         <div class="form-group">
           <label for="subject">I'm Interested In...</label>
           <select id="subject" name="subject">
-            <option value="chalk">Signing Up for a Chalk Square</option>
-            <option value="volunteer">Volunteering</option>
-            <option value="vendor">Food Vending</option>
-            <option value="sponsor">Sponsoring</option>
-            <option value="other">Other</option>
+            <option value="Signing Up for a Chalk Square">Signing Up for a Chalk Square</option>
+            <option value="Volunteering">Volunteering</option>
+            <option value="Food Vending">Food Vending</option>
+            <option value="Sponsoring">Sponsoring</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="form-group">
@@ -571,6 +564,35 @@
           <button type="submit" class="btn btn-coral">Send Message</button>
         </div>
       </form>
+      <div id="form-success" style="display:none; text-align:center; padding:2rem 0;">
+        <h3 style="font-family:'Baumans',sans-serif; font-size:1.8rem; margin-bottom:0.5rem;">Thanks!</h3>
+        <p>We got your message and will be in touch soon.</p>
+      </div>
+
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var form = this;
+          var btn = form.querySelector('button[type="submit"]');
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+
+          var data = new FormData(form);
+          fetch('https://script.google.com/macros/s/AKfycbxjskb323Gwrhjo8ZEGaAx7KnynSOHpYi6pNid4-eXU-JJtaq8PsZrBqtTen_crf6cNcw/exec', {
+            method: 'POST',
+            body: data
+          })
+          .then(function() {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          })
+          .catch(function() {
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+            alert('Something went wrong. Please try again!');
+          });
+        });
+      </script>
     </div>
   </section>
 
